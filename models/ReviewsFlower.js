@@ -23,10 +23,6 @@ const reviewSchema = new mongoose.Schema({
       min: 1,
       max: 10,
       required: [true, 'Please rate the flower'],
-      // enum: {
-      //     values: [1,2,3,4,5,6,7,8,9,10],
-      //     message: 'Incorrect value.Valid rating value is between 0 - 10'
-      // }
     },
     createdAt: {
         type: Date,
@@ -35,6 +31,10 @@ const reviewSchema = new mongoose.Schema({
     changedAt: [Date],
 })
 
+reviewSchema.index({
+    user: 1,
+    flower: 1
+})
 
 reviewSchema.statics.calcAverageRating = async function(flowerId) {
     const stats = await this.aggregate([

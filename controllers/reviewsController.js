@@ -15,6 +15,7 @@ exports.generateReview = catchAsync(async (req, res, next) => {
         status: 'success',
         data: newReview
     });
+    next();
 });
 
 exports.getReviews = crudRecFactory.getAll(Review);

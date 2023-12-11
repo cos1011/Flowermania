@@ -39,9 +39,9 @@ const createAndSendToken = (user, statusCode, res) => {
 
 exports.singup = catchAsync(async (req, res, next) => {
 
-    const newUser = await User.create(req.body)
-    createAndSendToken(newUser, 201, res)
-
+    const newUser = await User.create(req.body);
+    createAndSendToken(newUser, 201, res);
+    next();
 });
 
 
@@ -60,7 +60,7 @@ exports.login = catchAsync( async (req, res, next) => {
     }
 
     createAndSendToken(user, 200, res)
-
+    next()
 });
 
 exports.protect = catchAsync( async (req, res, next) => {

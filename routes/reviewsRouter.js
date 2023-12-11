@@ -8,7 +8,7 @@ const router = express.Router({ mergeParams: true });
 router
     .route('/')
     .get(reviewsFlowerController.getReviews)
-    .post(authController.protect, reviewsFlowerController.generateReview)
+    .post(authController.protect, restrictTo('user'), reviewsFlowerController.generateReview)
 
 router
     .route('/reviews-flowers/:id')

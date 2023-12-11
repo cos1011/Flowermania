@@ -36,6 +36,8 @@ exports.createOne = Model => catchAsync(async (req, res, next) => {
         status: 'success',
         data: doc
     });
+
+    next();
 });
 
 exports.patchOne = Model => catchAsync(async(req, res, next) => {
@@ -50,6 +52,8 @@ exports.patchOne = Model => catchAsync(async(req, res, next) => {
         status: 'success',
         message: `${updatedDoc.name} has been uccessfully updated`
     })
+
+    next();
 
 });
 
@@ -95,5 +99,5 @@ exports.deleteOne = Model => catchAsync( async(req, res, next) => {
        status: 'success',
        data: doc
     });
-
+    next();
 } )
