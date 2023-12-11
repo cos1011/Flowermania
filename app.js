@@ -17,6 +17,7 @@ const rootDir = require('./utils/path');
 const flowersRouter = require('./routes/flowersRouter');
 const usersRouter = require('./routes/usersRouter');
 const reviewsRouter = require('./routes/reviewsRouter');
+const viewsRouter = require('./routes/views.Router');
 
 const app = express();
 
@@ -55,12 +56,7 @@ const limiter = rateLimit({
 
 app.use('/api', limiter);
 
-app.get('/', (req, res) => {
-   res.status(200).render('base', {
-      flower: 'Iris',
-      head: 'Peter'
-   });
-});
+app.use(viewsRouter);
 
 app.use('/api/v1/flowers', flowersRouter);
 app.use('/api/v1/users', usersRouter);

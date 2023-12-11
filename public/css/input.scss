@@ -2,4 +2,12 @@
 
 @import './abstract/variables';
 @import './abstract/mixins';
+
+
 @import "./base/base";
+@import './base/typography';
+
+@import './layout//header';
+@import './layout/main';
+
+@import './components/card';

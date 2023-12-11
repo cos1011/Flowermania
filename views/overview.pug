@@ -1,0 +1,40 @@
+extends base
+
+block content
+    main.main
+        .main__container
+            h1.heading-primary our collection
+            .card-container
+                each flower in flowers
+                    .card 
+                        .card__header 
+                            .card-picture
+                            h3.heading-tertiary=flower.name
+
+                        .card__main 
+                            each variety in flower.varieties
+                                .card__item
+                                    h4.card__heading-sub.card__spec Species: 
+                                        span.card__value #{variety.species}
+                                .card__item
+                                    h4.card__spec Countries
+                                        each country in variety.countries
+                                            p.card__value  #{country}
+                                .card__item
+                                    h4.card__spec Price 
+                                        span.card__value $#{variety.price}
+
+                            .card__item
+                                h4.card__spec Seasons
+                                each season in flower.harvestSeasons
+                                    p=season
+                                            
+
+
+                        .card__footer
+                            p.card__spec Price:
+                                span.card__footer__value  #{flower.price.replace('from', '').replace('to', '-').replace('per each', '')}
+                                span.card__footer__value 
+                            p.card__spec Rating:
+                                span.card__footer__value #{flower.avgRating}
+                                span.card__footer__value    

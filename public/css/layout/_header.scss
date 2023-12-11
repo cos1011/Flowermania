@@ -1,0 +1,81 @@
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to bottom left, rgba(196, 190, 135, 0.85), rgba(147, 213, 54, 0.85));
+}
+
+
+.nav-panel {
+    
+    padding: 20px 15px;
+
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+
+    justify-content: space-around;
+    align-items: center;
+    background-image: linear-gradient( to right, rgba(43, 107, 107, 0.85), rgba(32, 181, 181, 0.85)), url('../../img/flower-panel.jpg');
+    background-size: cover;
+    background-position: bottom;
+
+    &--left {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+
+        :not(:first-child) {
+            margin-left: 20px;
+        }
+    }
+
+    &--right {
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+
+        :not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+.nav-item {
+    text-decoration: none;
+
+    &:link,
+    &:active {
+        color: black;
+    }
+
+
+    &:visited,
+    &:hover {
+        color: green;
+    }
+}
+
+.header-img {
+
+    
+    cursor: initial;
+    h2 {
+       text-align: center;
+
+       background-image: linear-gradient(to bottom left, rgba(196, 135, 178, 0.85), rgba(213, 115, 54, 0.85));
+        color: transparent;
+        -webkit-background-clip: text;
+        
+        font-weight: 700;
+        letter-spacing: 2.5px;
+    }
+
+    p {
+        text-align: center;
+
+        background-image: linear-gradient(to bottom left, rgba(196, 135, 135, 0.85), rgba(202, 213, 54, 0.85));
+        color: transparent;
+        -webkit-background-clip: text;
+        font-weight: 700;
+
+        letter-spacing: 5px;
+    }
+}
